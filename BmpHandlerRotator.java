@@ -7,6 +7,7 @@ public class BmpHandlerRotator {
     private static int ImageWidth;
     private static int ImageHeight;
 
+    // Funcion para obtener en formato de byte los pixeles de la imagen
     public static byte[] color(double r, double g, double b) {
         return new byte[] {
             (byte) (int) (b * 255),
@@ -34,7 +35,7 @@ public class BmpHandlerRotator {
     }
 
 
-    
+    // Constructor de la clase
     public BmpHandlerRotator(ArrayList<Object> pixels, int imageWidth, int imageHeight) {
         this.pixels = pixels;
         ImageWidth = imageWidth;
@@ -43,9 +44,9 @@ public class BmpHandlerRotator {
         generateFile("Image-vrotation.bmp", "v");
     }
 
+    // Funcion para generar el archivo de imagen
     public void generateFile(String filename, String typeRotation) {
        
-        // Generate bmp black image with the same size of the original image
         // Create the file
         try {
             FileOutputStream file = new FileOutputStream(filename);
@@ -87,19 +88,10 @@ public class BmpHandlerRotator {
                             (double) ((ArrayList<Double[]>) pixels.get(y)).get((ImageWidth-1)-x)[1],
                             (double) ((ArrayList<Double[]>) pixels.get(y)).get((ImageWidth-1)-x)[2]
                         ));
-                        // System.out.println(x);
                     }
                 }
             
-                    // for(int x= ImageWidth-1; x > 0; x--) {
-                    //     for(int y = 0; y < ImageHeight; y++) {
-                    //         file.write( color(
-                    //             (double) ((ArrayList<Double[]>) pixels.get(y)).get(x)[0],
-                    //             (double) ((ArrayList<Double[]>) pixels.get(y)).get(x)[1],
-                    //             (double) ((ArrayList<Double[]>) pixels.get(y)).get(x)[2]
-                    //         ));
-                    //     }
-                    // }
+
             }
 
         } catch (Exception e) {

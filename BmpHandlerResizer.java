@@ -19,7 +19,7 @@ public class BmpHandlerResizer {
         };
     }
 
-
+    //  Funcion para obtener en formato de byte los pixeles de la imagen
     public static byte[] color(double r, double g, double b) {
         return new byte[] {
             (byte) (int) (b * 255),
@@ -28,16 +28,15 @@ public class BmpHandlerResizer {
         };
     }
 
-
+    // Constructor de la clase
     public BmpHandlerResizer(ArrayList pixels, int ImageWidth, int ImageHeight) {
         generateFile("Image-thin.bmp", pixels, ImageWidth, ImageHeight,"thin");
         generateFile("Image-flat.bmp", pixels, ImageWidth, ImageHeight,"flat");
     }
 
+    // Funcion para generar el archivo de imagen
     public void generateFile(String filename, ArrayList pixels, int ImageWidth, int ImageHeight, String typeResize) {
-        // Generate bmp black image with the same size of the original image
 
-        // ImageWidth = (ImageWidth%2==0)?ImageWidth/2:(ImageWidth+1)/2;
 
         // Create the file
         try {

@@ -2,10 +2,12 @@ import java.io.FileOutputStream;
 import java.util.ArrayList;
 
 public class BmpHandlerCore {
+    // Atributos
     private static ArrayList<Object> pixels;
     private static int ImageWidth;
     private static int ImageHeight;
 
+    // Funcion para obtener en formato de byte los pixeles de la imagen
     public static byte[] color(double r, double g, double b) {
         return new byte[] {
             (byte) (int) (b * 255),
@@ -32,7 +34,7 @@ public class BmpHandlerCore {
     }
 
 
-
+    // Constructor de la clase
     public BmpHandlerCore(ArrayList<Object> pixels, int imageWidth, int imageHeight) {
         this.pixels = pixels;
         ImageWidth = imageWidth;
@@ -46,7 +48,6 @@ public class BmpHandlerCore {
     // Create a new image from array of pixels
     public void glFinish(String filename) {
        
-        // Generate bmp black image with the same size of the original image
         // Create the file
         try {
             FileOutputStream file = new FileOutputStream(filename);
@@ -86,7 +87,6 @@ public class BmpHandlerCore {
 
     public void glFinish(String filename, String rgb) {
        
-        // Generate bmp black image with the same size of the original image
         // Create the file
         try {
             FileOutputStream file = new FileOutputStream(filename);
