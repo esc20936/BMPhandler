@@ -99,16 +99,21 @@ public class BMPImageHandler {
                     }
                     else if(option.equals("-rotate") ){
                         print("Generando rotaciones en el eje X y Y");
-                        // Generar rotaciones en el eje X y Y
                         new BmpHandlerRotator(pixels, ImageWidth, ImageHeight);
 
 
                     }
                     else if(option.equals("-resize") ){
                         print("Cambiando el tamaño de la imagen");
-                        // Cambiar el tamaño de la imagen
-
+                        new BmpHandlerResizer(pixels, ImageWidth, ImageHeight);
                         
+                    }else if(option.equals("-all") ){
+                        print("Generando imagenes rgb y filtro sepia");
+                        new BmpHandlerCore(pixels, ImageWidth, ImageHeight);
+                        print("Generando rotaciones en el eje X y Y");
+                        new BmpHandlerRotator(pixels, ImageWidth, ImageHeight);
+                        print("Cambiando el tamaño de la imagen");
+                        new BmpHandlerResizer(pixels, ImageWidth, ImageHeight);
                     }
                 }else {
                     print("Error al leer el archivo");

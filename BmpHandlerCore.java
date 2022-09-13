@@ -37,7 +37,6 @@ public class BmpHandlerCore {
         this.pixels = pixels;
         ImageWidth = imageWidth;
         ImageHeight = imageHeight;
-        glFinish("salida.bmp");
         glFinish("Image-red.bmp","r");
         glFinish("Image-green.bmp","g");
         glFinish("Image-blue.bmp","b");
